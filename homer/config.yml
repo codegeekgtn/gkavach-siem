@@ -1,0 +1,183 @@
+---
+# Homepage configuration
+# See https://fontawesome.com/icons for icons options
+
+title: "Gkavach Dashboard"
+subtitle: "GKavach"
+logo: "https://gkavach.com/storage/2022/12/cropped-dark-logo-1-165x46.png"
+# icon: "fas fa-skull-crossbones" # Optional icon
+
+header: true
+footer: '<p>All rights reserved to <a href="https://gtn.com.np/" target="_blank">Green Tick Nepal</a></p>'
+columns: 5
+# Optional theme customization
+theme: default
+colors:
+  light:
+    highlight-primary: "#192023"
+    highlight-secondary: "#4E7620"
+    highlight-hover: "#5a95f5"
+    background: "#f5f5f5"
+    card-background: "#ffffff"
+    text: "#363636"
+    text-header: "#ffffff"
+    text-title: "#303030"
+    text-subtitle: "#424242"
+    card-shadow: rgba(0, 0, 0, 0.1)
+    link: "#89D01C"
+    link-hover: "#82C71D"
+  dark:
+    highlight-primary: "#192023"
+    highlight-secondary: "#4E7620"
+    highlight-hover: "#5a95f5"
+    background: "#131313"
+    card-background: "#2b2b2b"
+    text: "#eaeaea"
+    text-header: "#ffffff"
+    text-title: "#fafafa"
+    text-subtitle: "#f5f5f5"
+    card-shadow: rgba(0, 0, 0, 0.4)
+    link: "#89D01C"
+    link-hover: "#82C71D"
+
+links:
+# Services
+# First level array represent a group.
+# Leave only a "items" key if not using group (group name, icon & tagstyle are optional, section separation will not be displayed).
+services:
+  - name: "CTI"
+    icon: "fas fa-globe"
+    items:
+      - name: "Misp"
+        logo: "https://www.misp-project.org/img/logo.png"
+        tag: "app"
+        url: "https://s1em_hostname/misp"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Opencti"
+        logo: "https://www.opencti.io/wp-content/uploads/2022/03/logo_menu.png"
+        tag: "app"
+        url: "https://s1em_hostname/opencti"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "SIEM"
+    icon: "fas fa-desktop"
+    items:
+      - name: "Elastic SIEM"
+        logo: "https://elastic-content-share.eu/wp-content/uploads/edd/2020/06/security-logo-color-150x150.png"
+        tag: "app"
+        url: "https://s1em_hostname/kibana/app/security/overview"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Monitoring"
+        logo: "https://cdn.freebiesupply.com/logos/thumbs/2x/elastic-kibana-logo.png"
+        tag: "app"
+        url: "https://s1em_hostname/kibana/app/uptime"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "SOAR"
+    icon: "fas fa-project-diagram"
+    items:
+      - name: "N8n"
+        logo: "https://raw.githubusercontent.com/n8n-io/n8n/master/assets/n8n-logo.png"
+        tag: "app"
+        url: "https://s1em_hostname/n8n/signin"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "MALWARE"
+    icon: "fas fa-radiation"
+    items:
+      - name: "Mwdb"
+        logo: "https://github.com/CERT-Polska/mwdb-core/raw/master/mwdb/web/src/assets/logo.png"
+        tag: "app"
+        url: "http://s1em_hostname:8080"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "OSINT"
+    icon: "fas fa-fingerprint"
+    items:
+      - name: "Spiderfoot"
+        logo: "https://www.spiderfoot.net/wp-content/themes/spiderfoot/img/logo.svg"
+        tag: "app"
+        url: "https://s1em_hostname/spiderfoot/"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "FPC"
+    icon: "fas fa-save"
+    items:
+      - name: "Arkime"
+        logo: "https://avatars.githubusercontent.com/u/71138764?s=200&v=4"
+        tag: "app"
+        url: "https://s1em_hostname/arkime/"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "MITRE"
+    icon: "fas fa-cogs"
+    items:
+      - name: "Elastic Rules"
+        logo: "http://attack.mitre.org/theme/images/ATT&CK_red.png"
+        tag: "site"
+        tagstyle: "is-success"
+        url: "https://ela.st/detection-rules-navigator"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "SIRP"
+    icon: "fas fa-sitemap"
+    items:
+      - name: "Velociraptor"
+        logo: "https://repository-images.githubusercontent.com/126576769/4da42780-92cf-11e9-8947-d23162406860"
+        tag: "app"
+        url: "https://s1em_hostname/velociraptor/"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Zircolite"
+        logo: "https://github.com/wagga40/Zircolite/raw/master/pics/zircolite_400.png"
+        tag: "app"
+        url: "https://s1em_hostname/kibana/app/dashboards#/view/832a98e0-9ef0-11ed-bedc-f9813e7df557"
+        target: "_blank" # optional html a tag target attribute
+      - name: "TheHive"
+        logo: "https://github.com/TheHive-Project/TheHive/raw/main/images/thehive-logo.png"
+        tag: "app"
+        url: "https://s1em_hostname/thehive"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Cortex"
+        logo: "https://github.com/TheHive-Project/Cortex/raw/master/images/cortex-logo.png"
+        tag: "app"
+        url: "https://s1em_hostname/cortex"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "TOOLS"
+    icon: "fas fa-tools"
+    items:
+      - name: "CyberChef"
+        logo: "https://www.gchq.gov.uk/images/CyberChef768x512.jpg"
+        tag: "app"
+        url: "https://s1em_hostname/cyberchef/"
+        target: "_blank" # optional html a tag target attribute
+      - name: "CodiMD"
+        logo: "https://cdn.futura-sciences.com/buildsv6/images/wide1920/4/b/e/4be0f23a59_122541_markdown.jpg"
+        tag: "app"
+        url: "https://s1em_hostname/codimd/"
+        target: "_blank" # optional html a tag target attribute
+      - name: "StartMe"
+        logo: "https://res.cloudinary.com/crunchbase-production/image/upload/c_lpad,h_170,w_170,f_auto,b_white,q_auto:eco,dpr_1/v1477931274/aq1yfkwbl5yslbedhkyj.png"
+        tag: "site"
+        tagstyle: "is-success"
+        url: "https://start.me/p/6r66da/cybersecurity"
+        target: "_blank" # optional html a tag target attribute
+
+  - name: "UPLOAD"
+    icon: "fas fa-cloud-arrow-up"
+    items:
+      - name: "PCAP"
+        logo: "https://fileproinfo.com/images/pcap_file_extension.png"
+        tag: "app"
+        url: "https://s1em_hostname/upload/"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Zircolite"
+        logo: "https://fileproinfo.com/images/pcap_file_extension.png"
+        tag: "app"
+        url: "https://s1em_hostname/zircolite/"
+        target: "_blank" # optional html a tag target attribute
+      - name: "Velociraptor"
+        logo: "https://fileproinfo.com/images/pcap_file_extension.png"
+        tag: "app"
+        url: "https://s1em_hostname/velociraptor-upload/"
+        target: "_blank" # optional html a tag target attribute

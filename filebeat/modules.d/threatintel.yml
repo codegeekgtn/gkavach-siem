@@ -1,0 +1,90 @@
+# Module: threatintel
+# Docs: https://www.elastic.co/guide/en/beats/filebeat/7.x/filebeat-module-threatintel.html
+
+- module: threatintel
+  misp:
+    enabled: true
+    var.input: httpjson
+    var.url: https://s1em_hostname/misp/events/restSearch
+    var.api_token: "misp_api_key"
+    var.first_interval: 300h
+    var.interval: 5m
+    var.ssl.verification_mode: none
+
+  abuseurl:
+    enabled: true
+    var.input: httpjson
+    var.url: https://urlhaus-api.abuse.ch/v1/urls/recent/
+    var.interval: 60m
+
+  abusemalware:
+    enabled: true
+    var.input: httpjson
+    var.url: https://urlhaus-api.abuse.ch/v1/payloads/recent/
+    var.interval: 60m
+    
+  malwarebazaar:
+    enabled: true
+    var.input: httpjson
+    var.url: https://mb-api.abuse.ch/api/v1/
+    var.interval: 10m
+
+  otx:
+    enabled: true
+    var.input: httpjson
+    var.url: https://otx.alienvault.com/api/v1/indicators/export
+    var.api_token: 766ba1df3ab54db9c0fcbf62ef048c3a04c260e8ca65b6c25346084b7b4719ad
+    var.first_interval: 24h
+    var.lookback_range: 2h
+    var.interval: 60m
+
+  anomali:
+    enabled: false
+    var.input: httpjson
+    var.url: https://limo.anomali.com/api/v1/taxii2/feeds/collections/41/objects?match[type]=indicator
+    var.username: guest
+    var.password: guest
+    var.interval: 60m
+
+  anomalithreatstream:
+    enabled: true
+    # Input used for ingesting threat intel data
+    var.input: http_endpoint
+    # Address to bind to in order to receive HTTP requests
+    # from the Integrator SDK. Use 0.0.0.0 to bind to all
+    # existing interfaces.
+    var.listen_address: localhost
+    # Port to use to receive HTTP requests from the
+    # Integrator SDK.
+    var.listen_port: 8080
+    # Secret key to authenticate requests from the SDK.
+    var.secret: '<Add your secret here>'
+    # Uncomment the following and set the absolute paths
+    # to the server SSL certificate and private key to
+    # enable HTTPS secure connections.
+    #
+    # var.ssl_certificate: path/to/server_ssl_cert.pem
+    # var.ssl_key: path/to/ssl_key.pem
+
+  recordedfuture:
+    enabled: true
+    # Input used for ingesting threat intel data
+    var.input: httpjson
+    # The interval to poll the API for updates
+    var.interval: 5m
+    # How far back in time to start fetching intelligence when run for the
+    # first time. Value must be in hours. Default: 168h (1 week).
+    var.first_interval: 168h
+    # The URL used for Threat Intel API calls.
+    # Must include the `limit` parameter and at least `entity` and `timestamps` fields.
+    # See the Connect API Explorer for a list of possible parameters.
+    #
+    # For `ip` entities:
+    var.url: "https://api.recordedfuture.com/v2/ip/search?limit=200&fields=entity,timestamps,risk,intelCard,location&metadata=false"
+    # For `domain` entities:
+    # var.url: "https://api.recordedfuture.com/v2/domain/search?limit=200&fields=entity,timestamps,risk,intelCard,location&metadata=false"
+    # For `hash` entities:
+    # var.url: "https://api.recordedfuture.com/v2/hash/search?limit=200&fields=entity,fileHashes,timestamps,risk,intelCard,location&metadata=false"
+    # For `url` entities:
+    # var.url: "https://api.recordedfuture.com/v2/url/search?limit=200&fields=entity,timestamps,risk&metadata=false"
+    var.api_token: "<RF_TOKEN>"
